@@ -1,0 +1,65 @@
+name: Bug report
+description: Report something that is not working as intended
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. If this is a **security vulnerability**, please do NOT file it here — use the Security tab → "Report a vulnerability" (private Security Advisory) instead.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One sentence — what is wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps that reliably produce the bug.
+      placeholder: |
+        1. …
+        2. …
+        3. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: prod or dev, affected service(s), approximate version or image tag if known
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_class
+    attributes:
+      label: Data class involved (if any)
+      description: Does this bug touch customer telemetry, auth data, PII, or curation config? If so, note it here — it may affect triage urgency. Leave blank if not applicable.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Pre-flight
+      options:
+        - label: I have confirmed this is not a security vulnerability. (If it becomes one during investigation, I will close this issue and open a Security Advisory.)
+          required: true
