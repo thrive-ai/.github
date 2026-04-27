@@ -1,0 +1,14 @@
+# Disable blank issues so every issue uses one of the templates above.
+# Contact links provide alternative channels — particularly the private
+# Security Advisory flow for actual vulnerabilities.
+
+blank_issues_enabled: false
+
+contact_links:
+  - name: Report a security vulnerability (private)
+    url: https://github.com/thrive-ai/.github/security/advisories/new
+    about: For actual vulnerabilities in any Thrive product or repo, use GitHub's private Security Advisory flow — NOT a public issue. If you know the affected repo, you can also use that repo's own /security/advisories/new page directly.
+
+  - name: Customer support
+    url: https://support.thrive-ai.co.uk
+    about: For customer-facing support queries, please use the Thrive support channel (FreshDesk) rather than filing a GitHub issue.
