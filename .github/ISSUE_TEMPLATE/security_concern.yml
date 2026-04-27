@@ -1,0 +1,39 @@
+name: Security concern (general / low severity)
+description: Discussion of hardening, secure-defaults, or questions about controls. NOT for vulnerabilities.
+title: "[Security] "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Please read first
+
+        **If you have found a vulnerability** (authn/authz bypass, data leak, privilege escalation, ability to tamper with commands or telemetry, crypto weakness, supply-chain risk), **do NOT file a public issue.**
+
+        Instead, open a **private Security Advisory** from this repository's **Security** tab → "Report a vulnerability".
+
+        This template is only for **non-exploitable** security topics that benefit from open discussion — hardening suggestions, secure-defaults proposals, or questions about current controls.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm this is NOT an exploitable vulnerability. If it becomes one during discussion, I will close this issue and open a Security Advisory.
+          required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences describing the concern.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal / discussion
+      description: What would you like us to change or discuss?
+    validations:
+      required: true
