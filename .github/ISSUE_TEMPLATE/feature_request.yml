@@ -1,0 +1,58 @@
+name: Feature request / enhancement
+description: Propose a change or new capability
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or operational problem does this solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: A sketch of the approach — detail is welcome but not required.
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected components
+      description: Which APIs / services / frontends / edge components would this touch? (See DESIGN-01 §4 for the component list.)
+
+  - type: dropdown
+    id: data_class
+    attributes:
+      label: Data class impact
+      description: Does this introduce, change, or move a data class? (POL-A8.25 §6.1)
+      options:
+        - No new data / no class change
+        - New telemetry field or derived data
+        - New or changed auth / tenant-routing data
+        - New customer PII
+        - New curation / presentation config
+        - Other — describe above
+    validations:
+      required: true
+
+  - type: dropdown
+    id: external
+    attributes:
+      label: New external dependency?
+      options:
+        - No
+        - Yes — new outbound SaaS or API
+        - Yes — new inbound integration / webhook
+    validations:
+      required: true
+
+  - type: textarea
+    id: trust_boundary
+    attributes:
+      label: Trust-boundary impact
+      description: Does this cross, add, or change a trust boundary (DESIGN-01 §6)? If so, architectural review is required (POL-A8.27 §7.1) before coding starts.
