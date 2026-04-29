@@ -21,7 +21,7 @@ GitHub has a convention: if a repository exists at **`https://github.com/thrive-
 Steps:
 
 1. Create a repository `thrive-ai/.github` (if it does not already exist). It should be **public** or **internal** — private `.github` repos do not propagate templates. A small risk to accept; the repo holds no secrets, only templates and org-level community health files.
-2. Give `thrive-admin` Admin on the repo; all other teams **no access** (same model as `thrive-ai/iso-audit` — integrity of the templates is itself a control).
+2. Give `thrive-admin` Admin on the repo; all other teams **no access** (same model as `thrive-ai/iso-27001-evidence` — integrity of the templates is itself a control).
 3. Customise placeholders in `ISSUE_TEMPLATE/config.yml` — search for `REPLACE_ME` and substitute the real Security Advisory and customer-support URLs (see "Customisation required before rollout" below).
 4. Run **`.github/scripts/install_org_templates.sh`** from the root of this repo. It uploads the contents of `github-templates/` into `thrive-ai/.github/.github/` via the GitHub Contents API, with one commit per file. The script refuses to run if any `REPLACE_ME` placeholders remain or if the destination repo doesn't exist or is private. Re-running is safe (it updates existing files in place using their current sha).
 
