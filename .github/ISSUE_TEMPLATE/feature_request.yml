@@ -56,3 +56,29 @@ body:
     attributes:
       label: Trust-boundary impact
       description: Does this cross, add, or change a trust boundary (DESIGN-01 §6)? If so, architectural review is required (POL-A8.27 §7.1) before coding starts.
+
+  - type: textarea
+    id: regulatory_inputs
+    attributes:
+      label: Regulatory / statutory inputs
+      description: Any statutory, regulatory or contractual obligation that constrains this change? Most commonly UK GDPR / DPA 2018 if PII is involved (cite the relevant row in `registers/Personal_Information_Processing_Register__Register.csv`); also customer-contract clauses, sector regulation (e.g. building safety), licensing terms. "None" if not applicable. (ISO 9001 §8.3.3 design input.)
+
+  - type: textarea
+    id: prior_design
+    attributes:
+      label: Prior-design learning
+      description: Have we built something like this before? Any ADR, post-incident review, or earlier issue we should learn from? Link to the relevant artefact. "None" if it's genuinely greenfield. (ISO 9001 §8.3.3 design input.)
+
+  - type: textarea
+    id: failure_consequences
+    attributes:
+      label: Consequences of failure
+      description: If this feature is built and then fails in production — what is the impact? (Customer downtime, incorrect telemetry, mis-routed billing, data loss, safety implication, etc.) Sets the bar for the verification / validation effort needed before promotion. (ISO 9001 §8.3.3 design input.)
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: How will we know this is done? Phrase as testable outcomes ("X returns Y given Z" / "user can do W in <2s") — copied into the implementing PR for validation in `dev` before promotion. (ISO 9001 §8.3.5 design output.)
+    validations:
+      required: true
