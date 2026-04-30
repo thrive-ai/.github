@@ -24,6 +24,12 @@ Keep answers short. If a section is genuinely N/A, write "None" or "N/A" — do 
 
 <!-- Concrete check you did. "CI green" is necessary but not sufficient on its own — note the manual verification in `dev` or locally. -->
 
+## Acceptance criteria
+
+<!--
+The criteria the change had to meet for this PR to be considered done — copied from the linked issue or restated here. Phrased as testable outcomes ("X returns Y given Z" / "user can do W in <2s"), not as a description of what the code does. ISO 9001 §8.3.5 expects design outputs to include or reference acceptance criteria; the validation step in `dev` (POL-A8.25 §6.6) checks against this list before promotion to prod.
+-->
+
 ## Security / privacy notes
 
 <!--
