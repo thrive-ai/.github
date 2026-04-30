@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for the report. If this is a **security vulnerability**, please do NOT file it here — use the Security tab → "Report a vulnerability" (private Security Advisory) instead.
+        Thanks for the report. If this is a **security vulnerability**, please do NOT file it here — report it via the Thrive security-vulnerability form at https://www.thrive-ai.co.uk/security-report or by email to security@thrive-ai.co.uk instead.
 
   - type: textarea
     id: summary
@@ -61,5 +61,5 @@ body:
     attributes:
       label: Pre-flight
       options:
-        - label: I have confirmed this is not a security vulnerability. (If it becomes one during investigation, I will close this issue and open a Security Advisory.)
+        - label: I have confirmed this is not a security vulnerability. (If it becomes one during investigation, I will close this issue and report it via https://www.thrive-ai.co.uk/security-report or security@thrive-ai.co.uk.)
           required: true
