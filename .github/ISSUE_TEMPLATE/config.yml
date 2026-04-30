@@ -1,13 +1,15 @@
 # Disable blank issues so every issue uses one of the templates above.
-# Contact links provide alternative channels — particularly the private
-# Security Advisory flow for actual vulnerabilities.
+# Contact links provide alternative channels — particularly the canonical
+# Thrive security-vulnerability reporting channel
+# (https://www.thrive-ai.co.uk/security-report or security@thrive-ai.co.uk)
+# for actual vulnerabilities.
 
 blank_issues_enabled: false
 
 contact_links:
-  - name: Report a security vulnerability (private)
-    url: https://security.thrive-ai.co.uk
-    about: For actual vulnerabilities in any Thrive product or repo, use the dedicated security disclosure channel at security.thrive-ai.co.uk — NOT a public GitHub issue.
+  - name: Report a security vulnerability
+    url: https://www.thrive-ai.co.uk/security-report
+    about: For actual vulnerabilities in any Thrive product or repo, use the Thrive security-vulnerability form at https://www.thrive-ai.co.uk/security-report or email security@thrive-ai.co.uk directly — NOT a public GitHub issue.
 
   - name: Customer support
     url: https://support.thrive-ai.co.uk
