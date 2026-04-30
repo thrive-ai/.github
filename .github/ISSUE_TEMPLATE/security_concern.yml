@@ -10,7 +10,7 @@ body:
 
         **If you have found a vulnerability** (authn/authz bypass, data leak, privilege escalation, ability to tamper with commands or telemetry, crypto weakness, supply-chain risk), **do NOT file a public issue.**
 
-        Instead, open a **private Security Advisory** from this repository's **Security** tab → "Report a vulnerability".
+        Instead, report it via the Thrive security-vulnerability form at https://www.thrive-ai.co.uk/security-report or by email to security@thrive-ai.co.uk.
 
         This template is only for **non-exploitable** security topics that benefit from open discussion — hardening suggestions, secure-defaults proposals, or questions about current controls.
 
@@ -19,7 +19,7 @@ body:
     attributes:
       label: Confirmation
       options:
-        - label: I confirm this is NOT an exploitable vulnerability. If it becomes one during discussion, I will close this issue and open a Security Advisory.
+        - label: I confirm this is NOT an exploitable vulnerability. If it becomes one during discussion, I will close this issue and report it via https://www.thrive-ai.co.uk/security-report or security@thrive-ai.co.uk.
           required: true
 
   - type: textarea
