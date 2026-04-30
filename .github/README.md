@@ -9,8 +9,8 @@ Standard GitHub templates for the Thrive organisation. Deliberately **lean** —
 | `PULL_REQUEST_TEMPLATE.md` | `.github/PULL_REQUEST_TEMPLATE.md` | Default PR body — summary, type, linked issue, how verified, security/privacy, breaking changes, checklist |
 | `ISSUE_TEMPLATE/bug_report.yml` | `.github/ISSUE_TEMPLATE/bug_report.yml` | Structured bug intake |
 | `ISSUE_TEMPLATE/feature_request.yml` | `.github/ISSUE_TEMPLATE/feature_request.yml` | Structured feature/enhancement intake — includes data-class and trust-boundary prompts |
-| `ISSUE_TEMPLATE/security_concern.yml` | `.github/ISSUE_TEMPLATE/security_concern.yml` | Non-vulnerability security discussion (redirects real vulns to the private Security Advisory flow) |
-| `ISSUE_TEMPLATE/config.yml` | `.github/ISSUE_TEMPLATE/config.yml` | Disables blank issues; adds contact links for security vulnerabilities |
+| `ISSUE_TEMPLATE/security_concern.yml` | `.github/ISSUE_TEMPLATE/security_concern.yml` | Non-vulnerability security discussion (redirects real vulns to the canonical Thrive security-report channel — `https://www.thrive-ai.co.uk/security-report` or `security@thrive-ai.co.uk`) |
+| `ISSUE_TEMPLATE/config.yml` | `.github/ISSUE_TEMPLATE/config.yml` | Disables blank issues; adds contact links for the canonical security-vulnerability reporting channel |
 
 ## Rollout — two options
 
@@ -22,7 +22,7 @@ Steps:
 
 1. Create a repository `thrive-ai/.github` (if it does not already exist). It should be **public** or **internal** — private `.github` repos do not propagate templates. A small risk to accept; the repo holds no secrets, only templates and org-level community health files.
 2. Give `thrive-admin` Admin on the repo; all other teams **no access** (same model as `thrive-ai/iso-27001-evidence` — integrity of the templates is itself a control).
-3. Customise placeholders in `ISSUE_TEMPLATE/config.yml` — search for `REPLACE_ME` and substitute the real Security Advisory and customer-support URLs (see "Customisation required before rollout" below).
+3. Customise placeholders in `ISSUE_TEMPLATE/config.yml` — search for `REPLACE_ME` and substitute the canonical security-vulnerability and customer-support URLs (see "Customisation required before rollout" below). The current template already points at the Thrive canonical URLs (`https://www.thrive-ai.co.uk/security-report`, `security@thrive-ai.co.uk`); only override per-repo if a repository has its own dedicated channel.
 4. Run **`.github/scripts/install_org_templates.sh`** from the root of this repo. It uploads the contents of `github-templates/` into `thrive-ai/.github/.github/` via the GitHub Contents API, with one commit per file. The script refuses to run if any `REPLACE_ME` placeholders remain or if the destination repo doesn't exist or is private. Re-running is safe (it updates existing files in place using their current sha).
 
 If you'd rather do it by hand: clone `thrive-ai/.github`, copy `github-templates/.` into the clone's `.github/`, commit, push.
@@ -44,7 +44,7 @@ Drawback: each repo is a separate place to maintain the templates, and drift is 
 
 | File | What to update |
 |---|---|
-| `ISSUE_TEMPLATE/config.yml` | Replace the **`https://REPLACE_ME`** URLs with the Thrive security-vulnerability reporting URL (ideally the GitHub Security Advisory path of each repo — `../../security/advisories/new` — or a canonical org page) and the customer-support URL |
+| `ISSUE_TEMPLATE/config.yml` | Already points at the canonical Thrive security-vulnerability channel (`https://www.thrive-ai.co.uk/security-report` and `security@thrive-ai.co.uk`). Replace only if a repo has a dedicated channel of its own. The customer-support URL placeholder still needs filling per repo. |
 
 ## ISO 27001 control mapping
 
@@ -60,7 +60,7 @@ The templates are not just engineering hygiene — they are evidence artefacts.
 | PR — Checklist (ADR-0001, POL-A8.27) | A.8.27, A.8.32 | Confirms CODEOWNERS and architectural-review obligations have been met where relevant |
 | Feature — "Data class impact" | A.8.25 §6.1 | Captures data considerations at requirements stage |
 | Feature — "Trust-boundary impact" | A.8.27 §7.1 | Triggers architectural review when needed |
-| Security concern — redirect to Security Advisory | Responsible disclosure | Prevents accidental public disclosure of vulnerabilities |
+| Security concern — redirect to canonical security-report channel | Responsible disclosure | Prevents accidental public disclosure of vulnerabilities |
 
 ## Maintenance
 
